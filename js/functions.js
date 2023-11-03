@@ -37,7 +37,7 @@ var class_type = "Electiva Tecnica 1";
 var boolean = true; // false 
 // arrays -vectores
 var array_num =[ 1,2,3,4,5,];
-var array_tex =["lunes", "martes","miercoles"];
+var array_tex =["lunes", "martes","miercoles","jueves","viernes","sabado","domingo"];
 var array_mix =[1, "a",2,"c"];
 var array_mul =[
     {name:"Wilder", last_name:"Contreras", age:"31"},
@@ -63,3 +63,74 @@ console.log("Division = "+divi.toFixed(2));
 var modulo =number_one % number_two;
 console.log("Modulo = "+modulo);
 
+// operadores logicos y estructuras condicionales(Inverse,Incremento y Decremento)
+// AND && con if -Ampersan
+var bool =false;
+var numeric = 10;
+if(!bool && numeric == "10"){
+    console.log("ENTRA IF");
+}
+else{
+    console.log("ENTRA ELSE");
+}
+// OR || con if
+if(!bool || numeric ==7){
+   console.log("ENTRA IF");
+   numeric+=3;
+}else{
+    console.log("ENTRA ELSE");
+    numeric--;
+}
+console.log(numeric);
+// FOR
+for(let j = 0; j<array_tex.length; j++){
+     console.log(array_tex[j] + (j+1));
+}
+
+// WHILE
+let f=0;
+while(f<array_tex.length){
+     console.log(array_tex[f]+(f+1));
+     f++;
+}
+// DO WHILE
+let m=0;
+do{
+    console.log(array_tex[m] + (m+1));
+    m++;
+}while(m<array_tex.length);
+
+
+// FUNCIONES Y EVENTOS
+function load_page(){
+    // alert("LA PAGINA SE HA CARGADO CORRECTAMENTE")
+}
+
+function change_color(){
+    document.body.style.backgroundColor = "red"
+    document.body.style.color = "#fff"
+}
+
+const btn_limpiar = document.querySelector("#clear_color");
+clear_color.addEventListener("dblclick", ()=>{
+    document.body.style.backgroundColor = "#fff"
+    document.body.style.color = "#000"
+})
+// Registro foformulario
+const form_register = document.getElementById("form_register");
+const nombres       =document.getElementById("nombres");
+const apellidos     =document.getElementById("apellidos");
+const information   =document.getElementById("information");
+
+form_register.addEventListener("submit", name_event =>{
+    name_event.preventDefault();
+    let info="";
+    // console.log(nombres.value);
+    if(nombres.value.length <= 2 || apellidos.value.length <=2){
+       info +="NOMBRES Y/0 APELLIDOS INVALIDOS"
+       information.style.color ="red";
+    }else{
+        alert(nombres.value + " " + apellidos.value);
+    }
+    information.innerText =info;
+})

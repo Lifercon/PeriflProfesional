@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="load_page()">
     <label for="" id="box_one"></label>
     <label for="" id="box_two"></label>
+
+    <button onclick="change_color()">CAMBIAR COLOR</button>
+    <button id="clear_color">LIMPIAR COLOR</button>
+
+    <form id="form_register" autocomplete="off">
+        <label for="nombres">Nombres</label>
+        <input type="text" id="nombres" size="30" placeholder="Escriba sus nombres">
+        <br>
+        <label for="text"> Apellidos</label>
+        <input type="text" id="apellidos" size="30" placeholder="Escriba sus apellidos">
+        <br>
+        <button type="submit">REGISTRARSE</button>
+        <button type="reset">LIMPIAR</button>
+        <br>
+        <br>
+        <p id="information"></p>
+
+    </form>
     
     <script src="../js/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
