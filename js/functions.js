@@ -43,9 +43,8 @@ var array_mul =[
     {name:"Wilder", last_name:"Contreras", age:"31"},
     {name:"Liceth", last_name:"Duarte", age:"32"},
     {name:"Karen", last_name:"Bayona", age:"31"},
-    {name:"Ana", last_name:"perez", age:"31"},
-
-]
+    {name:"Ana", last_name:"perez", age:"31"}
+];
 // ######### operadores basicos
 // suma
 var suma = number_one +number_two;
@@ -104,7 +103,33 @@ do{
 // FUNCIONES Y EVENTOS
 function load_page(){
     // alert("LA PAGINA SE HA CARGADO CORRECTAMENTE")
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    let date = new Date();
+    console.log(date.getMinutes());
+    for(let j=0; j<array_mul.length;j++){
+        console.log(array_mul[j].name);
+    }
 }
+function validate(){
+    let nombres = document.getElementById("nombres"); 
+    let nombres_style = document.getElementById("nombres"); 
+    // console.log(nombres);
+    if(nombres.value.length > 2){
+        nombres_style.style.border = "2px solid green";
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus();
+        document.getElementById("nombres").value = "";
+        // alert(nombres.toUpperCase());
+        // alert(nombres.toLowerCase());
+        // alert(nombres.charAt());
+        // alert(nombres.indexOf(l));
+        // alert(nombres.lastIndexOf(e));
+        // alert(nombres.split(" "));
+
+    }
+}
+
 
 function change_color(){
     document.body.style.backgroundColor = "red"
